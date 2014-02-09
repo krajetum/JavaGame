@@ -7,13 +7,14 @@ import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
 import com.jme3.niftygui.NiftyJmeDisplay;
+import com.jme3.post.SceneProcessor;
 import com.jme3.renderer.RenderManager;
 import com.jme3.scene.Spatial;
 import com.jme3.texture.Texture;
 import de.lessvoid.nifty.Nifty;
 
 public class Main extends SimpleApplication {
-
+    
     List cube_list=new LinkedList();
     Cube app_cube;
     int i,j;
@@ -22,6 +23,7 @@ public class Main extends SimpleApplication {
         Main app = new Main();
         app.start();
     }
+    
     
     @Override
     public void simpleInitApp() {

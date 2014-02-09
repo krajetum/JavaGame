@@ -21,7 +21,7 @@
                 </effect>
                 <!--<text id="text" font="Interface/Fonts/Default.fnt" color="#000f" text="Hello World!" align="center" valign="center" />-->
             </panel>
-            <panel id="panel_bottom_left" height="35%" width="40%" valign="center" childLayout="center">  
+            <!--<panel id="panel_bottom_left" height="35%" width="40%" valign="center" childLayout="center">  
                 <control name="button" label="Start" id="StartButton" align="left" valign="bottom" visibleToMouse="true"> 
                 <interact onClick="start()"/>
                 </control>
@@ -30,7 +30,7 @@
                 <control name="button" label="Quit" id="QuitButton" align="right" valign="bottom" visibleToMouse="true"> 
                 <interact onClick="start()"/>
                 </control>
-            </panel>
+            </panel>-->
         </layer>
     </screen>
 </nifty>
