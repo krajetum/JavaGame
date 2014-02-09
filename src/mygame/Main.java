@@ -17,7 +17,7 @@ public class Main extends SimpleApplication {
     List cube_list=new LinkedList();
     NiftyJmeDisplay niftyDisplay; // new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
     Cube app_cube;
-    int i,j;
+    int i,j,k;
 
     public static void main(String[] args) {
         Main app = new Main();
@@ -44,7 +44,7 @@ public class Main extends SimpleApplication {
     public void add_cube(float x,float y,float z)
     {
        cube_list.add(new Cube(x,y,z)); 
-       app_cube=(Cube)cube_list.get( 5*i + j);
+       app_cube=(Cube)cube_list.get(40*k + 15*i + j);
        app_cube.cube_model=assetManager.loadModel("Models/cubo_base/cubo.j3o");
        app_cube.cube_mat=new Material(assetManager,"Common/MatDefs/Misc/Unshaded.j3md");
        //app_cube.cube_texture=assetManager.loadTexture("percorso");
@@ -68,11 +68,10 @@ public class Main extends SimpleApplication {
        guiViewPort.removeProcessor(niftyDisplay); 
        flyCam.setDragToRotate(false); // disable the fly cam
        flyCam.setMoveSpeed(15.0f);
-       for(i=0; i<5; i++)
-       {
-         for(j=0; j<5; j++)
-           add_cube(i,0,j);
-       }
+      for(k=0; k<40; k++) //y
+       for(i=0; i<15; i++) //x
+         for(j=0; j<15; j++) //z
+           add_cube(i,k,j);
     }
     
 };
