@@ -16,6 +16,7 @@ import de.lessvoid.nifty.Nifty;
 public class Main extends SimpleApplication {
     
     List cube_list=new LinkedList();
+    NiftyJmeDisplay niftyDisplay; // new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
     Cube app_cube;
     int i,j;
 
@@ -27,16 +28,7 @@ public class Main extends SimpleApplication {
     
     @Override
     public void simpleInitApp() {
-        startLayout();
-        flyCam.setMoveSpeed(15.0f);
-      
-       for(i=0; i<5; i++)
-       {
-         for(j=0; j<5; j++)
-           add_cube(i,0,j);
-       }
-       
-       
+       startLayout();
     }
 
     @Override
@@ -64,17 +56,23 @@ public class Main extends SimpleApplication {
     }
     
     public void startLayout(){
-        NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(
-        assetManager, inputManager, audioRenderer, guiViewPort);
-        /** Create a new NiftyGUI object */
+        niftyDisplay=new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
         Nifty nifty = niftyDisplay.getNifty();
-        /** Read your XML and initialize your custom ScreenController */
         nifty.fromXml("Interface/Start.xml", "start");
-        // nifty.fromXml("Interface/helloworld.xml", "start", new MySettingsScreen(data));
-        // attach the Nifty display to the gui view port as a processor
-        guiViewPort.addProcessor(niftyDisplay);
-        // disable the fly cam
-        flyCam.setDragToRotate(true);
+        guiViewPort.addProcessor(niftyDisplay); // attach the Nifty display to the gui view port as a processor
+        flyCam.setDragToRotate(true); // disable the fly cam
+    }
+    
+    public void initgame()
+    { 
+       guiViewPort.removeProcessor(niftyDisplay); 
+       flyCam.setDragToRotate(false); // disable the fly cam
+       flyCam.setMoveSpeed(15.0f);
+       for(i=0; i<5; i++)
+       {
+         for(j=0; j<5; j++)
+           add_cube(i,0,j);
+       }
     }
     
 };
