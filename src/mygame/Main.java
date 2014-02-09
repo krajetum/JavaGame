@@ -16,7 +16,6 @@ public class Main extends SimpleApplication {
     
     List cube_list=new LinkedList();
     NiftyJmeDisplay niftyDisplay; // new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
-    start st;
     Cube app_cube;
     int i,j;
 
@@ -28,8 +27,8 @@ public class Main extends SimpleApplication {
     
     @Override
     public void simpleInitApp() {
-       st=new start(this);
        startLayout();
+       init_game();
     }
 
     @Override
