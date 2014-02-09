@@ -7,7 +7,6 @@ import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
 import com.jme3.niftygui.NiftyJmeDisplay;
-import com.jme3.post.SceneProcessor;
 import com.jme3.renderer.RenderManager;
 import com.jme3.scene.Spatial;
 import com.jme3.texture.Texture;
@@ -17,6 +16,7 @@ public class Main extends SimpleApplication {
     
     List cube_list=new LinkedList();
     NiftyJmeDisplay niftyDisplay; // new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
+    start st;
     Cube app_cube;
     int i,j;
 
@@ -28,12 +28,13 @@ public class Main extends SimpleApplication {
     
     @Override
     public void simpleInitApp() {
+       st=new start(this);
        startLayout();
     }
 
     @Override
     public void simpleUpdate(float tpf) {
-        
+      
     }
 
     @Override
@@ -62,8 +63,8 @@ public class Main extends SimpleApplication {
         guiViewPort.addProcessor(niftyDisplay); // attach the Nifty display to the gui view port as a processor
         flyCam.setDragToRotate(true); // disable the fly cam
     }
-    
-    public void initgame()
+
+    public void init_game()
     { 
        guiViewPort.removeProcessor(niftyDisplay); 
        flyCam.setDragToRotate(false); // disable the fly cam
