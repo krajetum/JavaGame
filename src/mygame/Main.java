@@ -24,7 +24,7 @@ public class Main extends SimpleApplication {
     
     @Override
     public void simpleInitApp() {
-      // startLayout();
+      startLayout();
         flyCam.setMoveSpeed(15.0f);
       
        for(i=0; i<5; i++)
