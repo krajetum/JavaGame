@@ -9,6 +9,7 @@ import com.jme3.math.Vector3f;
 import com.jme3.niftygui.NiftyJmeDisplay;
 import com.jme3.renderer.RenderManager;
 import com.jme3.scene.Spatial;
+import com.jme3.texture.Texture;
 import de.lessvoid.nifty.Nifty;
 
 public class Main extends SimpleApplication {
@@ -51,9 +52,11 @@ public class Main extends SimpleApplication {
        cube_list.add(new Cube(x,y,z)); 
        app_cube=(Cube)cube_list.get( 5*i + j);
        app_cube.cube_model=assetManager.loadModel("Models/cubo_base/cubo.j3o");
-       Material mat=new Material(assetManager,"Common/MatDefs/Misc/Unshaded.j3md");
-       mat.setColor("Color", ColorRGBA.Green);
-       app_cube.cube_model.setMaterial(mat);
+       app_cube.cube_mat=new Material(assetManager,"Common/MatDefs/Misc/Unshaded.j3md");
+       //app_cube.cube_texture=assetManager.loadTexture("percorso");
+       //app_cube.cube_mat.setTexture("textcube", app_cube.cube_texture);
+       app_cube.cube_mat.setColor("Color", ColorRGBA.Green);
+       app_cube.cube_model.setMaterial(app_cube.cube_mat);
        app_cube.cube_model.setLocalTranslation(x,y,z);
        rootNode.attachChild(app_cube.cube_model);
     }
@@ -79,6 +82,8 @@ class Cube
 {
     Spatial cube_model;
     public float x_cube,y_cube,z_cube;
+    Texture cube_texture;
+    Material cube_mat;
     Cube(float x,float y,float z)
     {
        x_cube=x;
