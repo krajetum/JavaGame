@@ -13,7 +13,7 @@
        <layer id="layer" childLayout="center">
            
            <panel  id="panel" height="50%" width="50%" align="center" valign="center"  childLayout="center" visibleToMouse="true">
-               <image filename="Interface/sfondoXMLStart.bmp" width="100%" height="100%"/>
+               <image filename="Interface/sfondoXMLStart.jpg" width="100%" height="100%"/>
                 <interact onClick="quit()"/>
                 <effect>
                     <onStartScreen name="move" mode="in" direction="top" length="300" startDelay="0" inherit="true"/>
