@@ -24,10 +24,12 @@
             </panel>
             <panel id="panel_bottom_left" height="35%" width="40%" valign="center" childLayout="center">  
                 <control name="button" label="Start" id="StartButton" align="left" valign="bottom"> 
+                <interact onClick="start()"/>
                 </control>
             </panel>
             <panel id="panel_bottom_right" height="35%" width="40%" valign="center" childLayout="center">  
                 <control name="button" label="Quit" id="QuitButton" align="right" valign="bottom"> 
+                <interact onClick="start()"/>
                 </control>
             </panel>
         </layer>
